@@ -15,6 +15,7 @@ public class MyTree {
         } else {
 
             MyTreeNode currentNode = this.rootNode;
+
             while (true) {
                 if (newValue < currentNode.value) {
                     if (currentNode.leftChild == null) {
@@ -22,6 +23,7 @@ public class MyTree {
                         break;
                     }
                     currentNode = currentNode.leftChild;
+
                 } else {
                     if (currentNode.rightChild == null) {
                         currentNode.rightChild = newNode;
@@ -35,10 +37,11 @@ public class MyTree {
 
     public MyTreeNode traverse(MyTreeNode node) {
 
-        MyTreeNode tree = node;
-        tree.leftChild = node.leftChild == null ? null : traverse(node.leftChild);
-        tree.rightChild = node.rightChild == null ? null : traverse(node.rightChild);
-        return tree;
+        node.leftChild = node.leftChild == null ? null : traverse(node.leftChild);
+
+        node.rightChild = node.rightChild == null ? null : traverse(node.rightChild);
+
+        return node;
     }
 
     static class MyTreeNode {
