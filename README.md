@@ -19,4 +19,19 @@
     - lookup: O(log N)
     - insert: O(log N)
     - delete: O(log N)
-10. Calculate number of nodes at a given level n: 2^n. Example: 2^0 = 1 (Root node), 2^1 = 2
+10. Calculate number of nodes at a given level n: 2^n. Example: 2^0 = 1 (Root node), 2^1 = 2.
+11. Calculate number of nodes in a tree with level n: 2^n - 1. Example: 2^1 - 1 = 1 (Root node).
+12. Number of nodes with height(h) = 2^h -1 => log nodes = height (h).
+13. O(log N) is better than O(N) because we don't have to check each element in the data structure.
+14. Binary Search Tree:
+    - great for searching & comparing.
+    - All child nodes in the tree to the right of the root node must be greater than the current node.
+    - All child nodes in the tree to the left of the root node must be smaller than the current node.
+    - A node can only have upto 2 children.
+    - Ordered & Flexible size.
+    - No O(1) operations as traversal is needed for each operation.
+15. Balanced & Unbalanced Binary Search Tree
+    - An unbalanced tree is bad because the either side if the tree gets really long & at the end it will become linear
+    & the performance reduces from O(log N) to O(N).
+    - We can make balances trees using AVL or Red Black Trees.
+     
