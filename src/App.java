@@ -17,5 +17,8 @@ class App {
         System.out.println(data.leftChild);
         System.out.println(data.rightChild);
         System.out.println(data.value);
+
+        System.out.println(tree.lookup(17));
+        System.out.println(tree.lookup(1));
     }
 }

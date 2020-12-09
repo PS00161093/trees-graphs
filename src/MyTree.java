@@ -35,6 +35,27 @@ public class MyTree {
         }
     }
 
+    public boolean lookup(int value) {
+
+        if (this.rootNode == null) {
+            return false;
+        }
+
+        MyTreeNode currentNode = this.rootNode;
+
+        while (currentNode != null) {
+
+            if (value < currentNode.value) {
+                currentNode = currentNode.leftChild;
+            } else if (value > currentNode.value) {
+                currentNode = currentNode.rightChild;
+            } else if (value == currentNode.value)
+                return true;
+        }
+
+        return false;
+    }
+
     public MyTreeNode traverse(MyTreeNode node) {
 
         node.leftChild = node.leftChild == null ? null : traverse(node.leftChild);
