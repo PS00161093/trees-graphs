@@ -42,17 +42,82 @@ public class MyTree {
         }
 
         MyTreeNode currentNode = this.rootNode;
-
         while (currentNode != null) {
 
             if (value < currentNode.value) {
                 currentNode = currentNode.leftChild;
             } else if (value > currentNode.value) {
                 currentNode = currentNode.rightChild;
-            } else if (value == currentNode.value)
-                return true;
+            } else return true;
         }
 
+        return false;
+    }
+
+    public boolean remove(int value) {
+
+        if (this.rootNode == null) {
+            return false;
+        }
+
+        MyTreeNode parentNode = null;
+        MyTreeNode currentNode = this.rootNode;
+
+        while (currentNode != null) {
+
+            if (value < currentNode.value) {
+                parentNode = currentNode;
+                currentNode = currentNode.leftChild;
+
+            } else if (value > currentNode.value) {
+                parentNode = currentNode;
+                currentNode = currentNode.rightChild;
+
+            } else if (value == currentNode.value) {
+
+                if (currentNode.rightChild == null) {
+                    if (parentNode == null) {
+                        this.rootNode = currentNode.leftChild;
+                    } else {
+                        if (currentNode.value < parentNode.value) {
+                            parentNode.leftChild = currentNode.leftChild;
+                        } else if (currentNode.value > parentNode.value) {
+                            parentNode.rightChild = currentNode.leftChild;
+                        }
+                    }
+
+                } else if (currentNode.rightChild.leftChild == null) {
+                    currentNode.rightChild.leftChild = currentNode.leftChild;
+                    if (parentNode == null) {
+                        this.rootNode = currentNode.rightChild;
+                    } else {
+                        if (currentNode.value > parentNode.value) {
+                            parentNode.rightChild = currentNode.rightChild;
+                        }
+                    }
+
+                } else {
+                    MyTreeNode leftMostChild = currentNode.rightChild.leftChild;
+                    MyTreeNode leftMostParent = currentNode.rightChild;
+
+                    leftMostParent.leftChild = leftMostChild.rightChild;
+                    leftMostChild.leftChild = currentNode.leftChild;
+                    leftMostChild.rightChild = currentNode.rightChild;
+
+                    if (parentNode == null) {
+                        this.rootNode = leftMostChild;
+                    } else {
+                        if (currentNode.value < parentNode.value) {
+                            parentNode.rightChild = leftMostChild;
+                        } else if (currentNode.value > parentNode.value) {
+                            parentNode.rightChild = leftMostChild;
+                        }
+                    }
+
+                }
+                return true;
+            }
+        }
         return false;
     }
 

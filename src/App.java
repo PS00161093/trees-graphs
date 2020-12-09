@@ -20,5 +20,15 @@ class App {
 
         System.out.println(tree.lookup(17));
         System.out.println(tree.lookup(1));
+        System.out.println(tree.remove(1));
+        System.out.println(tree.lookup(1));
+
+        System.out.println(tree.lookup(170));
+        System.out.println(tree.remove(170));
+        System.out.println(tree.lookup(170));
+
+        System.out.println(tree.lookup(9));
+        System.out.println(tree.remove(9));
+        System.out.println(tree.lookup(9));
     }
 }
