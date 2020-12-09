@@ -33,5 +33,10 @@
 15. Balanced & Unbalanced Binary Search Tree
     - An unbalanced tree is bad because the either side if the tree gets really long & at the end it will become linear
     & the performance reduces from O(log N) to O(N).
-    - We can make balances trees using AVL or Red Black Trees.
+    - We can make balances trees using AVL or Red Black Trees. In Red Black Trees, Node is black & child are Red.
+    - Demo AVL Tree: [a link](https://www.cs.usfca.edu/~galles/visualization/AVLtree.html)
+    - Working of AVL Trees: [a link](https://medium.com/basecs/the-little-avl-tree-that-could-86a3cae410c7)
+    - Demo Red Black Tree: [a link](https://www.cs.usfca.edu/~galles/visualization/RedBlack.html)
+    - Working of Red Black Tree: [a link](https://medium.com/basecs/painting-nodes-black-with-red-black-trees-60eacb2be9a5)
+    - Differnce between AVL & Red Black Trees: [a link](https://stackoverflow.com/questions/13852870/red-black-tree-over-avl-tree)
      
