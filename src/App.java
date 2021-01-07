@@ -1,5 +1,7 @@
 package src;
 
+import java.util.logging.Level;
+
 class App {
 
     public static void main(String[] args) {
@@ -14,6 +16,10 @@ class App {
         tree.insert(1);
 
         MyTree.MyTreeNode data = tree.traverse(tree.rootNode);
+        LeftViewTree leftViewTree = new LeftViewTree();
+        System.out.print("Left View: ");
+        leftViewTree.travelLeftOnly(tree.rootNode, 0);
+        System.out.println();
         System.out.println(data.leftChild);
         System.out.println(data.rightChild);
         System.out.println(data.value);
