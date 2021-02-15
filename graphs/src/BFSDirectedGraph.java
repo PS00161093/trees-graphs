@@ -2,12 +2,12 @@ package graphs.src;
 
 import java.util.LinkedList;
 
-public class BFSGraph {
+public class BFSDirectedGraph {
 
     private int V;
     private LinkedList<Integer> adj[];
 
-    BFSGraph(int v) {
+    BFSDirectedGraph(int v) {
 
         V = v;
         adj = new LinkedList[v];
@@ -41,7 +41,7 @@ public class BFSGraph {
 
     public static void main(String[] args) {
 
-        BFSGraph g = new BFSGraph(4);
+        BFSDirectedGraph g = new BFSDirectedGraph(4);
 
         g.addEdge(0, 1);
         g.addEdge(0, 2);
