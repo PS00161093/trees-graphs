@@ -2,7 +2,7 @@ package graphs.src;
 
 import java.util.ArrayList;
 
-public class Graph {
+public class UndirectedGraph {
 
     static void addEdge(ArrayList<ArrayList<Integer>> adj, int u, int v) {
 
