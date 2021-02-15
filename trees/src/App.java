@@ -1,6 +1,4 @@
-package src;
-
-import java.util.logging.Level;
+package trees.src;
 
 class App {
 
