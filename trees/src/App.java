@@ -16,7 +16,7 @@ class App {
         MyTree.MyTreeNode data = tree.traverse(tree.rootNode);
         LeftViewTree leftViewTree = new LeftViewTree();
         System.out.print("Left View: ");
-        leftViewTree.travelLeftOnly(tree.rootNode, 0);
+
         System.out.println();
         System.out.println(data.leftChild);
         System.out.println(data.rightChild);
