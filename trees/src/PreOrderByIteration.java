@@ -8,6 +8,7 @@ import java.util.Stack;
 public class PreOrderByIteration {
 
     public void preOrder(TreeNode root) {
+        if(root == null) return;
         Stack<TreeNode> stack = new Stack<>();
         stack.push(root);
         while (!stack.isEmpty()) {
