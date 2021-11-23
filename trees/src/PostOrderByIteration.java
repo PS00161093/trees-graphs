@@ -12,26 +12,14 @@ import java.util.Stack;
 public class PostOrderByIteration {
 
     public void postOrder(TreeNode root) {
-        if (root != null) {
-            Stack<TreeNode> stack = new Stack<>();
-            TreeNode previous = root;
-            TreeNode current;
-            stack.push(root);
-            while (!stack.isEmpty()) {
-                current = stack.peek();
-                boolean hasChild = current.left != null || current.right != null;
-                boolean isPrevLastChild = previous == current.right || previous == current.left && current.right == null;
-                if (!hasChild || isPrevLastChild) {
-                    current = stack.pop();
-                    System.out.println(current.val);
-                    previous = current;
-                } else {
-                    if (current.right != null)
-                        stack.push(current.right);
-                    if (current.left != null)
-                        stack.push(current.left);
-                }
-            }
+        if (root == null) return;
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode c = stack.pop();
+            System.out.println(c.val);
+            if (c.left != null) stack.push(c.left);
+            if (c.right != null) stack.push(c.right);
         }
     }
 }
