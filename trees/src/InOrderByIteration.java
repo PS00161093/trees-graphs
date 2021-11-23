@@ -3,7 +3,7 @@ package trees.src;
 import java.util.Stack;
 
 /**
- * URL: https://www.baeldung.com/java-depth-first-search
+ * URL: https://leetcode.com/problems/binary-tree-inorder-traversal/
  * <p>
  * In-order = Left -> Root -> Right node
  * <p>
@@ -12,22 +12,16 @@ import java.util.Stack;
 public class InOrderByIteration {
 
     public void inOrder(TreeNode root) {
-        if (root != null) {
-            Stack<TreeNode> stack = new Stack<>();
-            stack.push(root);
-            while (!stack.isEmpty()) {
-                TreeNode currentNode = stack.pop();
-                while (currentNode.left != null) {
-                    currentNode = currentNode.left;
-                    stack.push(currentNode);
-                }
-                currentNode = stack.pop();
-                System.out.println(currentNode.val);
-                while (currentNode.right != null) {
-                    stack.push(currentNode.right);
-                    currentNode = currentNode.right;
-                }
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode curr = root;
+        while (curr != null || !stack.isEmpty()) {
+            while (curr != null) {
+                stack.push(curr);
+                curr = curr.left;
             }
+            curr = stack.pop();
+            System.out.println(curr.val);
+            curr = curr.right;
         }
     }
 
