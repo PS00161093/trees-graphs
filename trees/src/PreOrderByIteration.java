@@ -9,15 +9,12 @@ public class PreOrderByIteration {
 
     public void preOrder(TreeNode root) {
         Stack<TreeNode> stack = new Stack<>();
-        TreeNode cur = root;
-        while(!stack.isEmpty() || cur != null){
-            while(cur != null){
-                System.out.println(cur.val);
-                stack.push(cur);
-                cur = cur.left;
-            }
-            cur = stack.pop();
-            cur = cur.right;
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode c = stack.pop();
+            System.out.println(c.val);
+            if (c.right != null) stack.push(c.right);
+            if (c.left != null) stack.push(c.left);
         }
     }
 }
