@@ -7,20 +7,25 @@ import java.util.Stack;
  */
 class PreOrderByIteration {
     public static void preOrder(Node root) {
-
-        //PreOrder = Root -> Left -> right
+        
+        List<Integer> list = new ArrayList<>();
         Stack<Node> stack = new Stack<>();
-        Node c = root;
-
-        while (!stack.isEmpty() || c != null) {
-            while (c != null) {
-                System.out.print(c.data + " ");
-                stack.push(c);
-                c = c.left;
+        stack.push(root);
+        
+        while(!stack.isEmpty()) {
+            Node c = stack.pop();
+            list.add(list.size(), c.data);
+            
+            if(c.right != null) {
+                stack.push(c.right);
             }
-            c = stack.pop();
-            c = c.right;
+            
+            if(c.left != null) {
+                stack.push(c.left);
+            }
         }
+        
+        for(int n: list) System.out.print(n + " ");
     }
 
 }
